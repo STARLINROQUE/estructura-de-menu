@@ -1,79 +1,174 @@
+/* Variables para colores de la marca */
+:root {
+    --primary-color: #0d47a1; /* Azul Oscuro, similar al logo */
+    --secondary-color: #1e88e5; /* Azul más claro */
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* Fuente limpia y moderna */
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #c1b8b8;
-    color: #333;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
+/* --- Estilos del Encabezado (Header) --- */
 header {
-    background-color: #4e8586;
-    color: rgb(120, 182, 119);
-    padding: 20px;
-    text-align: center;
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.menu {
-    list-style: none;
-    padding: 0;
-    background-color: #3b8b99;
-    text-align: center;
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.8em;
     margin: 0;
 }
 
-.menu li {
-    display: inline-block;
-    position: relative;
+.logo p {
+    color: var(--text-color);
+    font-size: 0.8em;
+    margin-top: -5px;
 }
 
-.menu li a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
+nav a {
     text-decoration: none;
+    color: var(--text-color);
+    margin-left: 20px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Botones de navegación */
+.btn {
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
     font-weight: bold;
 }
 
-.menu li a:hover {
-    background-color: #e0eca1;
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
-.submenu .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #abaf5c;
-    list-style: none;
-    padding: 0;
-    min-width: 200px;
+.btn-secondary {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
-.submenu .dropdown li {
-    display: block;
+.btn-primary:hover {
+    background-color: #0a3680;
 }
 
-.submenu .dropdown li a {
-    display: block;
-    padding: 12px 20px;
-    color: white;
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- Sección Principal (Search/Hero) --- */
+.hero-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* --- Formulario de Búsqueda --- */
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.input-group {
+    flex: 1;
     text-align: left;
 }
 
-.submenu .dropdown li a:hover {
-    background-color: #b5c7d8;
-}
-
-.submenu:hover .dropdown {
+.input-group label {
     display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
 }
 
-footer {
-    background-color: #b1c5da;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.btn-search {
+    flex-basis: 20%; /* Reserva un espacio para el botón */
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    height: 40px; /* Alineación con los campos de input */
+    align-self: flex-end;
+}
+
+.btn-search:hover {
+    background-color: #1565c0;
+}
+
+/* --- Enlaces de Información --- */
+.info-links {
     margin-top: 20px;
 }
 
+.info-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9em;
+}
+
+.info-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: var(--white);
+    font-size: 0.85em;
+    margin-top: 40px;
+}
